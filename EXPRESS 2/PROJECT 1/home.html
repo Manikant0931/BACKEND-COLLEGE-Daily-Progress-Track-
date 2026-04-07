@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management System</title>
+</head>
+<body>
+
+    <h1>User Management System</h1>
+
+    <!-- Display Users -->
+    <h2>Current Users</h2>
+    <table border="1">
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>Age</th>
+            <th>Delete</th>
+        </tr>
+
+        <!-- Static Sample Data -->
+        <tr>
+            <td>101</td>
+            <td>Rahul</td>
+            <td>rahul@gmail.com</td>
+            <td>22</td>
+            <td>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="userUniqueId" value="101">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Manikant</td>
+            <td>manikant@gmail.com</td>
+            <td>23</td>
+            <td>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="userUniqueId" value="102">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Add User Form -->
+    <h2>Add User</h2>
+    <form action="/" method="post">
+        <input type="text" placeholder="User Unique Id" name="userUniqueId" required>
+        <input type="text" placeholder="User Name" name="userName" required>
+        <input type="text" placeholder="User Email" name="userEmail" required>
+        <input type="text" placeholder="User Age" name="userAge" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Update User Form -->
+    <h2>Update User</h2>
+    <form action="/update" method="post">
+        <input type="text" placeholder="User Unique Id" name="userUniqueId" required>
+        <input type="text" placeholder="User Name" name="userName">
+        <input type="text" placeholder="User Email" name="userEmail">
+        <input type="text" placeholder="User Age" name="userAge">
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>
